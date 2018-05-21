@@ -51,7 +51,7 @@ The script works as follows:
 |      90      |      139921.55     |
 |      100     |      140849.78     |
 ___
-
+ ![](/doc/pictures/result.png)
  
  As you can see from 1 to 8 threads to 8, the number of requests grows with linear dependency.
  With the number of threads equal to 8, the number of requests reaches a maximum.
