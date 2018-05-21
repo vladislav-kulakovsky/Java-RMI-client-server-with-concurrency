@@ -25,7 +25,7 @@ The script works as follows:
 - Run the Server application
 - Run the client with [1, 2,..., 9, 10, 20, 30, ..., 100] threads.
 - Save results of each iteration as CSV-file in "./results/result.csv"
-- Plot the graph with results
+- Plot the results graph with gnuplot
 #### Results
  As a result of testing, the following graph and tables
  

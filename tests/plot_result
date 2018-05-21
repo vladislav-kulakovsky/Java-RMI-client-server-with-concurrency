@@ -1,4 +1,7 @@
 set term png size 800,600
 set output 'results/result.png'
 set datafile separator ','
-plot 'results/result.csv' u 1:2 w lines 
+set title "N of threads/Queries"
+set xlabel "N of threads"
+set ylabel "Queries"
+plot 'results/result.csv' u 1:2 w lines lw 2 
