@@ -71,7 +71,7 @@ public class MainClient {
         Task task = new Task();
         ExecutorService executor = Executors.newFixedThreadPool(threadsNumber);
 
-        Vector<Long> result = new Vector<>();
+        List<Long> result = new ArrayList<>();
 
         for (int i = 0; i < threadsNumber; i++) {
             futureList.add(executor.submit(task));
@@ -92,7 +92,6 @@ public class MainClient {
         } finally {
             executor.shutdownNow();
         }
-
 
         long sum = result.stream().reduce((a, b) -> a + b).orElse((long) 0);
 

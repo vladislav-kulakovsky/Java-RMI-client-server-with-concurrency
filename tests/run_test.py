@@ -23,7 +23,7 @@ def run_client(threadsNumber: object) -> object:
 
 
 def print_to_csv(list: object) -> object:
-    with open('results\result.csv', 'w', newline='') as csvfile:
+    with open('results/result.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         for pair in list:
             writer.writerow([pair[0], pair[1]])

@@ -6,11 +6,13 @@ import java.rmi.registry.Registry;
 
 public class Server {
 
-    public static void main(String[] args) throws RemoteException {
-        RmiServer server = new RmiServerImpl();
+    private final static int port = 5099;
 
-        Registry registry = LocateRegistry.createRegistry(5099);
+    public static void main(String[] args) throws RemoteException {
+
+        Registry registry = LocateRegistry.createRegistry(port);
         registry.rebind("simple", new RmiServerImpl());
         System.out.println("Server started...");
+
     }
 }
