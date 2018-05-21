@@ -6,8 +6,7 @@ import os
 import signal
 import time
 import csv
-import platform
-
+import platform 
 
 def run_server() -> object:
     prc = Popen("java -cp ../build/classes/server/ com/vk/dell/emc/client_server/Server", shell=True)
@@ -23,7 +22,9 @@ def run_client(threadsNumber: object) -> object:
 
 
 def print_to_csv(list: object) -> object:
-    with open('results/result.csv', 'w', newline='') as csvfile:
+    filename = 'results/result.csv'
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    with open(filename, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         for pair in list:
             writer.writerow([pair[0], pair[1]])
