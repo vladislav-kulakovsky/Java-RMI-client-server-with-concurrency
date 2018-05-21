@@ -15,6 +15,11 @@ public class RmiServerImpl extends UnicastRemoteObject implements RmiServer {
 
     @Override
     public int nextRandomNumber() throws RemoteException {
+/*        try {
+            Thread.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
         return random.nextInt();
     }
 }
