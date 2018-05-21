@@ -1,0 +1,4 @@
+set term png size 800,600
+set output 'result.png'
+set datafile separator ','
+plot 'result.csv' u 1:2 w lines 

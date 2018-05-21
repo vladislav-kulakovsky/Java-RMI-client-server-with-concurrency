@@ -1,0 +1,17 @@
+# IntelliJ project files
+.idea
+*.iml
+.gradle
+out
+
+# Build Files #
+build/*
+
+# dolphin config
+.directory
+
+# Result files of testing
+tests/results/*
+
+#protect the gradle wrapper
+!gradle/wrapper/gradle-wrapper.jar

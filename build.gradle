@@ -1,0 +1,37 @@
+apply plugin: 'java'
+
+group 'com.vk.dell.emc.client_server'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/']
+        }
+    }
+}
+
+
+task buildServer(type: JavaCompile) {
+    source = fileTree(dir: 'src', include: '**/RmiServer*.java')
+    source += fileTree(dir: 'src', include: '**/Server.java')
+    destinationDir = file('build/classes/server')
+    classpath = sourceSets.main.compileClasspath
+}
+
+task buildClient(type: JavaCompile) {
+    source = fileTree(dir: 'src', include: '**/RmiServer.java')
+    source += fileTree(dir: 'src', include: '**/MainClient.java')
+    destinationDir = file('build/classes/client')
+    classpath = sourceSets.main.compileClasspath
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "4.4"
+}
